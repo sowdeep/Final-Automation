@@ -1,5 +1,6 @@
 # Final-Automation
 This Python script, climate_data_app.py, processes climate data from multiple "stations" over a specific range of years (1981-2010). It's designed to read data from custom space-separated files, consolidate it, calculate averages, and fill missing data points in a "Trade" column (derived from the last station's data) using averages from other stations.
+✅
 Here's a detailed breakdown:
 User Input and Configuration:
 Prompts the user to specify the number of climate stations.
@@ -20,6 +21,17 @@ Mean Calculation: The mean of all data columns (excluding Day_of_Year) is calcul
 Output:
 Per-Year Excel Files: For each year, a file named processed_climate_data_[year].xlsx is saved in the base directory, containing the consolidated and processed data, including the 'Mean' row.
 Per-Year Trade TXT Files: For each year, a file named trade_data_[year].txt is saved, containing only the Day_of_Year and Trade columns.
+
+
+cd C:\Users\aaa\Desktop\onelasttime
+
+.\venv\Scripts\activate
+
+python climate_data_app.py
+
+
+
+
 Final Formatted Excel File: A consolidated Excel file named [last_station_name]c.xlsx (e.g., 0730c.xlsx) is generated. This file contains a column for the last station's name, a 'Days' column, and columns for each processed year (1981-2010), populated with the Trade values.
 Final Combined CSV: A combined CSV file named [num_years] best from [last_station_name] c.csv (e.g., 30 best from 1005 c.csv) is created. This file contains the 'Trade' data for all processed years, with 'Day' as the index.
 Overall Trade Log TXT: A file named overall_trade_log.txt is created, detailing every instance where a NaN in the last station's data was filled with the Average_Other_Stations value.
